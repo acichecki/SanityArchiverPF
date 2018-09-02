@@ -97,5 +97,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SanityArchiver.Application\SanityArchiver.Application.csproj">
+      <Project>{d78bfb25-5907-4fa2-87a7-806a7831efd2}</Project>
+      <Name>SanityArchiver.Application</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
