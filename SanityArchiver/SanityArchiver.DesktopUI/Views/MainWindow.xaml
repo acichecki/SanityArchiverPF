@@ -21,6 +21,7 @@
                    Source="{Binding ImageName,
                         Converter={x:Static sanityArchiver:HeaderToImageConverter.Instance}}" />
             <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
+            <TextBlock VerticalAlignment="Center" Text="{Binding Size}"/>
           </StackPanel>
         </HierarchicalDataTemplate>
       </TreeView.ItemTemplate>

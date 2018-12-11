@@ -47,7 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Data\DirectoryItem.cs" />
+    <Compile Include="Models\Data\Item.cs" />
     <Compile Include="Models\Data\DirectoryItemType.cs" />
+    <Compile Include="Models\Data\DriveItem.cs" />
+    <Compile Include="Models\Data\FileItem.cs" />
     <Compile Include="Models\DirectoryStructure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
