@@ -4,7 +4,7 @@ using System.Windows.Data;
 using System.Windows.Media.Imaging;
 using SanityArchiver.Application.Models.Data;
 
-namespace SanityArchiver.DesktopUI.Converters
+namespace SanityArchiver
 {
 
         [ValueConversion(typeof(DirectoryItemType), typeof(BitmapImage))]

@@ -24,7 +24,7 @@ namespace SanityArchiver.DesktopUI.ViewModels
 
         public string Name { get { return this.Type == DirectoryItemType.Drive ? FullPath : DirectoryStructure.GetFileFolderName(this.FullPath); } }
 
-
+        public string ImageName => Type == DirectoryItemType.Drive ? "drive" : (Type == DirectoryItemType.File ? "file" : (IsExpanded ? "folder-open" : "folder-closed"));
         /// <summary>
         /// List of all children contained INSIDE this item
         /// </summary>
