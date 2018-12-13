@@ -16,6 +16,7 @@ namespace SanityArchiver.DesktopUI.ViewModels
     public class DirectoryItemVievModel : BaseViewModel
     {
         #region Public Properties
+        bool isSelected = false;
         // Type of this item
         public DirectoryItemType Type { get; set; }
 
@@ -35,7 +36,12 @@ namespace SanityArchiver.DesktopUI.ViewModels
         /// </summary>
         public bool CanExpand { get { return this.Type != DirectoryItemType.File;} }
 
-
+        public bool IsSelected
+        {
+            get { return isSelected; }
+            set { isSelected = value; }
+        }
+        
         public bool IsExpanded
         {
             get
@@ -52,6 +58,7 @@ namespace SanityArchiver.DesktopUI.ViewModels
                     this.ClearChildren();
             }
         }
+
         #endregion
 
         #region Constructor

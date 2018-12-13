@@ -20,6 +20,7 @@
             <Image Width="20" Margin="3" 
                    Source="{Binding ImageName,
                         Converter={x:Static sanityArchiver:HeaderToImageConverter.Instance}}" />
+            <CheckBox VerticalAlignment="Center" IsChecked="{Binding IsSelected, Mode=TwoWay}"/>
             <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
             <TextBlock VerticalAlignment="Center" Text="{Binding Size}"/>
           </StackPanel>
