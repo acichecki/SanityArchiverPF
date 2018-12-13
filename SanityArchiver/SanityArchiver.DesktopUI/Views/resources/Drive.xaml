@@ -1,0 +1,8 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModels="clr-namespace:SanityArchiver.DesktopUI.ViewModels">
+    
+    <DataTemplate x:Key="DriveDataTemplate" DataType="{x:Type viewModels:DirectoryItemVievModel}">
+         <TextBox Text="C# dalej lepszy od javy"></TextBox>
+    </DataTemplate>
+</ResourceDictionary>

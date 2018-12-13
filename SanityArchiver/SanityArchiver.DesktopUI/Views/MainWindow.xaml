@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SanityArchiver.DesktopUI"
         xmlns:sanityArchiver="clr-namespace:SanityArchiver"
+        xmlns:viewModels="clr-namespace:SanityArchiver.DesktopUI.ViewModels;assembly="
         mc:Ignorable="d"
         Title="Sanity Archiver" Height="450" Width="800">
+  <Window.Resources>
+    <viewModels:MyTemplateSelector x:Key="MyTemplateSelector"/>
+  </Window.Resources>
+
   <Grid>
     <TreeView x:Name="FolderView" ItemsSource="{Binding Items}">
       <TreeView.ItemContainerStyle>
@@ -20,9 +25,10 @@
             <Image Width="20" Margin="3" 
                    Source="{Binding ImageName,
                         Converter={x:Static sanityArchiver:HeaderToImageConverter.Instance}}" />
-            <CheckBox VerticalAlignment="Center" IsChecked="{Binding IsSelected, Mode=TwoWay}"/>
-            <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
-            <TextBlock VerticalAlignment="Center" Text="{Binding Size}"/>
+            <ContentControl
+              Content="{Binding}"
+              ContentTemplateSelector="{DynamicResource MyTemplateSelector}"/>
+
           </StackPanel>
         </HierarchicalDataTemplate>
       </TreeView.ItemTemplate>
