@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 using SanityArchiver.Application.Models;
 using SanityArchiver.Application.Models.Data;
@@ -41,7 +42,18 @@ namespace SanityArchiver.DesktopUI.ViewModels
         public bool IsSelected
         {
             get { return isSelected; }
-            set { isSelected = value; }
+            set
+            {
+                isSelected = value;
+                if (value)  
+                {
+                    DirectoryStructureViewModel.Selected.Add(this);
+                }
+                else
+                {
+                    DirectoryStructureViewModel.Selected.Remove(this);
+                }
+            }
         }
         
         public bool IsExpanded

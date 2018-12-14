@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using SanityArchiver.DesktopUI.ViewModels;
 
 namespace SanityArchiver.DesktopUI.Views
@@ -20,10 +22,11 @@ namespace SanityArchiver.DesktopUI.Views
         public void ArchiveWindow(object sender, RoutedEventArgs e)
         {
             var archiveWindow = new ArchiveWindow();
-            var archiveViewModel = new ArchiveViewModel();
-            var selectedItems = from m in FolderView.ItemsSource.Cast<DirectoryItemVievModel>() where m.IsSelected select m.FullPath;
-            archiveViewModel.ElementsToArchive = selectedItems.ToList();
+            var archiveViewModel = new ArchiveViewModel(DirectoryStructureViewModel.Selected);
+            archiveWindow.DataContext = archiveViewModel;
             archiveWindow.Show();
+
         }
     }
+    
 }
