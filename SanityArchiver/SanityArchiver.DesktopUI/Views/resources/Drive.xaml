@@ -1,0 +1,16 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModels="clr-namespace:SanityArchiver.DesktopUI.ViewModels"
+                    xmlns:sanityArchiver="clr-namespace:SanityArchiver">
+    
+    <DataTemplate x:Key="DriveDataTemplate" DataType="{x:Type viewModels:DirectoryItemVievModel}">
+        
+        <StackPanel Orientation="Horizontal">
+            <Image Width="20" Margin="3" 
+                   Source="{Binding ImageName,
+                        Converter={x:Static sanityArchiver:HeaderToImageConverter.Instance}}" />
+            <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
+        </StackPanel>
+        
+    </DataTemplate>
+</ResourceDictionary>

@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:SanityArchiver.DesktopUI"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-         
+
+            <ResourceDictionary x:Key="ResourceDictionary">
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="/Views/resources/File.xaml"/>
+                    <ResourceDictionary Source="/Views/resources/Folder.xaml"/>
+                    <ResourceDictionary Source="/Views/resources/Drive.xaml"/>
+                </ResourceDictionary.MergedDictionaries>  
+            </ResourceDictionary>
+
     </Application.Resources>
 </Application>

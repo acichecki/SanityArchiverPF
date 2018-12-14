@@ -4,9 +4,43 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SanityArchiver.DesktopUI"
+        xmlns:sanityArchiver="clr-namespace:SanityArchiver"
+        xmlns:viewModels="clr-namespace:SanityArchiver.DesktopUI.ViewModels;assembly="
         mc:Ignorable="d"
         Title="Sanity Archiver" Height="450" Width="800">
+  <Window.Resources>
+    <viewModels:MyTemplateSelector x:Key="MyTemplateSelector"/>
+  </Window.Resources>
+
+  <DockPanel>
+    <ToolBarTray DockPanel.Dock="Top">
+      <ToolBar>
+        <Button Command="New" Content="New" />
+        <Button Command="Open" Content="Open" />
+        <Button Command="Save" Content="Save" />
+      </ToolBar>
+      <ToolBar>
+        <Button Command="Cut" Content="Cut" />
+        <Button Command="Copy" Content="Copy" />
+        <Button Command="Paste" Content="Paste" />
+      </ToolBar>
+    </ToolBarTray>
+    
     <Grid>
-        
+      <TreeView x:Name="FolderView" ItemsSource="{Binding Items}">
+        <TreeView.ItemContainerStyle>
+          <Style TargetType="{x:Type TreeViewItem}">
+            <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+          </Style>
+        </TreeView.ItemContainerStyle>
+        <TreeView.ItemTemplate>
+          <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+            <ContentControl
+              Content="{Binding}"
+              ContentTemplateSelector="{DynamicResource MyTemplateSelector}"/>
+          </HierarchicalDataTemplate>
+        </TreeView.ItemTemplate>
+      </TreeView>
     </Grid>
+  </DockPanel>
 </Window>
