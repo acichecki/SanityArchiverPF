@@ -9,5 +9,10 @@ namespace SanityArchiver.DesktopUI.Views
         {
             InitializeComponent();
         }
+
+        private void Close_Button(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
