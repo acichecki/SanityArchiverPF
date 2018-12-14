@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 using SanityArchiver.DesktopUI.ViewModels;
 
 namespace SanityArchiver.DesktopUI.Views
@@ -16,5 +17,11 @@ namespace SanityArchiver.DesktopUI.Views
 
         }
 
+        public void ArchiveWindow(object sender, RoutedEventArgs e)
+        {
+            ArchiveWindow archiveWindow = new ArchiveWindow();
+            ArchiveViewModel archiveViewModel = new ArchiveViewModel();
+            archiveWindow.Show();
+        }
     }
 }

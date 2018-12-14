@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
 using SanityArchiver.Application.Models;
 using SanityArchiver.Application.Models.Data;
 
@@ -16,8 +17,7 @@ namespace SanityArchiver.DesktopUI.ViewModels
         /// A list of all directories on the machine
         /// </summary>
         public ObservableCollection<DirectoryItemVievModel> Items { get; set; }
-
-
+        
         public DirectoryStructureViewModel()
     {
         var children = DirectoryStructure.GetLogicalDrives();

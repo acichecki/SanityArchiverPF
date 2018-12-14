@@ -30,9 +30,7 @@ namespace SanityArchiver.Application.Models
                 //Create empty list
                 var items = new List<DirectoryItem>();
 
-                #region Get Folders
-            
-                //Add directories to the list
+            //Add directories to the list
                 try
                 {
                     var dirs = Directory.GetDirectories(fullPath);
@@ -42,11 +40,7 @@ namespace SanityArchiver.Application.Models
                 }
                 catch { }
 
-                #endregion
-
-                #region Get Files
-
-                //Add files to the list
+            //Add files to the list
                 try
                 {
                     var fs = Directory.GetFiles(fullPath);
@@ -55,14 +49,11 @@ namespace SanityArchiver.Application.Models
                         items.AddRange(fs.Select(files => new DirectoryItem { FullPath = files, Type = DirectoryItemType.File} ));
                 }
                 catch { }
-                #endregion
 
-                return items;
+            return items;
         }
 
-            #region Helpers
-
-            /// <summary>
+        /// <summary>
             /// Find file OR folder name of the full path
             /// </summary>
             /// <param name="path"> The full path of the file/folder.</param>
@@ -85,6 +76,5 @@ namespace SanityArchiver.Application.Models
             // Return the name after the last back slash
             return path.Substring(lastIndex + 1);
         }
-        #endregion
     }
 }

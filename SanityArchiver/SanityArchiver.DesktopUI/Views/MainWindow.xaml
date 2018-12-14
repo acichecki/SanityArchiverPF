@@ -11,18 +11,13 @@
   <Window.Resources>
     <viewModels:MyTemplateSelector x:Key="MyTemplateSelector"/>
   </Window.Resources>
-
+  <Window.CommandBindings>
+    <CommandBinding Command="ApplicationCommands.New" Executed="ArchiveWindow"/>
+  </Window.CommandBindings>
   <DockPanel>
     <ToolBarTray DockPanel.Dock="Top">
       <ToolBar>
-        <Button Command="New" Content="New" />
-        <Button Command="Open" Content="Open" />
-        <Button Command="Save" Content="Save" />
-      </ToolBar>
-      <ToolBar>
-        <Button Command="Cut" Content="Cut" />
-        <Button Command="Copy" Content="Copy" />
-        <Button Command="Paste" Content="Paste" />
+        <Button Command="New" Content="Archive" />
       </ToolBar>
     </ToolBarTray>
     
