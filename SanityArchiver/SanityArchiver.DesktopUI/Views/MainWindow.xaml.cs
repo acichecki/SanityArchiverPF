@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Windows;
-using SanityArchiver.Application.Models;
-using SanityArchiver.Application.Models.Data;
+﻿using System.Windows;
 using SanityArchiver.DesktopUI.ViewModels;
 
 namespace SanityArchiver.DesktopUI.Views
@@ -24,7 +19,11 @@ namespace SanityArchiver.DesktopUI.Views
         public void ArchiveWindow(object sender, RoutedEventArgs e)
         {
             var archiveWindow = new ArchiveWindow();
+            var archiveViewModel = new ArchiveViewModel(DirectoryStructureViewModel.Selected);
+            archiveWindow.DataContext = archiveViewModel;
             archiveWindow.Show();
+
         }
     }
+    
 }
