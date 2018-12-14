@@ -24,13 +24,10 @@ namespace SanityArchiver.DesktopUI.ViewModels
 
         public string ImageName => Type == DirectoryItemType.Drive ? "drive" : (Type == DirectoryItemType.File ? "file" : (IsExpanded ? "folder-open" : "folder-closed"));
         
-        public DateTime CreationDate
-        {
-            get { return Type == DirectoryItemType.File ? new FileInfo(FullPath).CreationTime : DateTime.Now; }
-        }
-        
-        public double Size { get {return Type == DirectoryItemType.File ? LongToDouble(new FileInfo(FullPath).Length, BytesToMegabytes(new FileInfo(FullPath).Length), 2) : 0 ; }}
-        
+        public DateTime CreationDate => Type == DirectoryItemType.File ? new FileInfo(FullPath).CreationTime : DateTime.Now;
+
+        public double Size => Type == DirectoryItemType.File ? LongToDouble(new FileInfo(FullPath).Length, BytesToMegabytes(new FileInfo(FullPath).Length), 2) : 0;
+
         /// <summary>
         /// List of all children contained INSIDE this item
         /// </summary>
