@@ -12,26 +12,35 @@
     <viewModels:MyTemplateSelector x:Key="MyTemplateSelector"/>
   </Window.Resources>
 
-  <Grid>
-    <TreeView x:Name="FolderView" ItemsSource="{Binding Items}">
-      <TreeView.ItemContainerStyle>
-        <Style TargetType="{x:Type TreeViewItem}">
-          <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
-        </Style>
-      </TreeView.ItemContainerStyle>
-      <TreeView.ItemTemplate>
-        <HierarchicalDataTemplate ItemsSource="{Binding Children}">
-          <StackPanel Orientation="Horizontal">
-            <Image Width="20" Margin="3" 
-                   Source="{Binding ImageName,
-                        Converter={x:Static sanityArchiver:HeaderToImageConverter.Instance}}" />
+  <DockPanel>
+    <ToolBarTray DockPanel.Dock="Top">
+      <ToolBar>
+        <Button Command="New" Content="New" />
+        <Button Command="Open" Content="Open" />
+        <Button Command="Save" Content="Save" />
+      </ToolBar>
+      <ToolBar>
+        <Button Command="Cut" Content="Cut" />
+        <Button Command="Copy" Content="Copy" />
+        <Button Command="Paste" Content="Paste" />
+      </ToolBar>
+    </ToolBarTray>
+    
+    <Grid>
+      <TreeView x:Name="FolderView" ItemsSource="{Binding Items}">
+        <TreeView.ItemContainerStyle>
+          <Style TargetType="{x:Type TreeViewItem}">
+            <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+          </Style>
+        </TreeView.ItemContainerStyle>
+        <TreeView.ItemTemplate>
+          <HierarchicalDataTemplate ItemsSource="{Binding Children}">
             <ContentControl
               Content="{Binding}"
               ContentTemplateSelector="{DynamicResource MyTemplateSelector}"/>
-
-          </StackPanel>
-        </HierarchicalDataTemplate>
-      </TreeView.ItemTemplate>
-    </TreeView>
-  </Grid>
+          </HierarchicalDataTemplate>
+        </TreeView.ItemTemplate>
+      </TreeView>
+    </Grid>
+  </DockPanel>
 </Window>

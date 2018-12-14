@@ -1,6 +1,5 @@
-﻿using SanityArchiver.DesktopUI.ViewModels;
-using System;
-using System.Windows;
+﻿using System.Windows;
+using SanityArchiver.DesktopUI.ViewModels;
 
 namespace SanityArchiver.DesktopUI.Views
 {
@@ -13,7 +12,7 @@ namespace SanityArchiver.DesktopUI.Views
         {
             InitializeComponent();
 
-            this.DataContext = new DirectoryStructureViewModel();
+            DataContext = new DirectoryStructureViewModel();
 
         }
 
