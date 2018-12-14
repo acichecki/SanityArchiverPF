@@ -17,5 +17,6 @@ namespace SanityArchiver.DesktopUI.ViewModels
 
         public List<string> ElementsToDisplay { get; set; } = new List<string>();
 
+        
     }
 }

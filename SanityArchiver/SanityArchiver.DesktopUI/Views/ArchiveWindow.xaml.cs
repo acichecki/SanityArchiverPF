@@ -11,7 +11,7 @@ namespace SanityArchiver.DesktopUI.Views
 
         private void Close_Button(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }
