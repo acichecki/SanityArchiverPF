@@ -19,8 +19,10 @@ namespace SanityArchiver.DesktopUI.Views
 
         public void ArchiveWindow(object sender, RoutedEventArgs e)
         {
-            ArchiveWindow archiveWindow = new ArchiveWindow();
-            ArchiveViewModel archiveViewModel = new ArchiveViewModel();
+            var archiveWindow = new ArchiveWindow();
+            var archiveViewModel = new ArchiveViewModel();
+            var selectedItems = from m in FolderView.ItemsSource.Cast<DirectoryItemVievModel>() where m.IsSelected select m.FullPath;
+            archiveViewModel.ElementsToArchive = selectedItems.ToList();
             archiveWindow.Show();
         }
     }
