@@ -11,7 +11,7 @@ namespace SanityArchiver.Application.Models
         {
             this.filesToArchive = filesToArchive;
         }
-        
+
         
     }
 }
