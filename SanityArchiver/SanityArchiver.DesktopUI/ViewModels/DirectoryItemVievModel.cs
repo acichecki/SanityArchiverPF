@@ -2,7 +2,6 @@
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Windows;
 using System.Windows.Input;
 using SanityArchiver.Application.Models;
 using SanityArchiver.Application.Models.Data;
@@ -126,7 +125,15 @@ namespace SanityArchiver.DesktopUI.ViewModels
 
         private long BytesToMegabytes(long number)
         {
-            return Convert.ToInt32(Math.Floor(Math.Log(number, 1024)));
+            try
+            {
+                return Convert.ToInt32(Math.Floor(Math.Log(number, 1024)));
+            }
+            catch
+            {
+
+            }
+            return number;
         }
 
         private double LongToDouble(long numberInBytes, long numberInMb, int decimalPlaces)

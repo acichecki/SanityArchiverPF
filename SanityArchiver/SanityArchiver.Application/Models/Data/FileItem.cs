@@ -16,7 +16,5 @@ namespace SanityArchiver.Application.Models.Data
         {
             fullPath = new FileInfo(value);
         }
-
-        public string Name { get; set; }
     }
 }

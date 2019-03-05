@@ -5,7 +5,5 @@ namespace SanityArchiver.Application.Models.Data
     public class DirectoryItem : Item
     {
         public string FullPath { get; set; }
-        
-        public string Name { get; set; }
     }
 }

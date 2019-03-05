@@ -1,5 +1,4 @@
 ﻿using SanityArchiver.Application.Models.Data;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,7 +13,6 @@ namespace SanityArchiver.Application.Models
         /// <returns>List of local drives.</returns>
         public static List<DirectoryItem> GetLogicalDrives()
         {
-            //Get every dive on the machine.
            return Directory.GetLogicalDrives().Select(drive => new DirectoryItem { FullPath = drive, Type = DirectoryItemType.Drive}).ToList();
         }
 
@@ -26,10 +24,7 @@ namespace SanityArchiver.Application.Models
     /// <returns></returns>
     public static List<DirectoryItem> GetDirectoryContents(string fullPath)
         {
-
-                //Create empty list
-                var items = new List<DirectoryItem>();
-
+            var items = new List<DirectoryItem>();
             //Add directories to the list
                 try
                 {
